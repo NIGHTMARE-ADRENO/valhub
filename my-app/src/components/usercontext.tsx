@@ -15,6 +15,8 @@ type UserContextType = {
   setshowreeldiv: (showreeldiv: boolean) => void;
   showtvdiv:boolean;
   setshowtvdiv:(showtvdiv:boolean)=>void;
+  showpmdiv:boolean;
+  setshowpmdiv:(showpmdiv:boolean)=>void;
    // function to update user
 };
 
@@ -30,6 +32,7 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [showreeldiv, setshowreeldiv] = useState<boolean>(false); // initial user is null (not logged in)
   const [showtvdiv, setshowtvdiv] = useState<boolean>(false);
+  const [showpmdiv, setshowpmdiv] = useState<boolean>(false);
 
   return (
     <UserContext.Provider value={{
@@ -38,7 +41,9 @@ export const UserProvider = ({ children }: UserProviderProps) => {
       showreeldiv,
       setshowreeldiv,
       showtvdiv,
-      setshowtvdiv
+      setshowtvdiv,
+      showpmdiv,
+      setshowpmdiv
     }}>
       {children}
     </UserContext.Provider>

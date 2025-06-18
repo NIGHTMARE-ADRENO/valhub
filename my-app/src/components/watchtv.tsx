@@ -10,7 +10,7 @@ type Thumbnailurlprops=
 
 function Watchtv() {
     return (
-        <div className="w-full h-full bg-amber-950 flex flex-col relative z-0 overflow-y-scroll">
+        <div className="w-full h-full bg-black flex flex-col relative z-0 overflow-y-scroll p-2">
             <Searchbar />
             <Videodiv thumbnailurl='thumbnails/thumb1.jpg' />
             <Videodiv thumbnailurl='thumbnails/thumb1.jpg'/>
