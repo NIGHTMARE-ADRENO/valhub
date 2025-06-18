@@ -3,14 +3,14 @@ import { faInbox, faTrophy, faUserPlus, faUserGroup, faPlay, faTv } from '@forta
 import { useUser } from './usercontext';
 
 function Footer() {
-    const { showreeldiv, setshowreeldiv } = useUser();
+    const { showreeldiv, setshowreeldiv,showtvdiv,setshowtvdiv } = useUser();
     return (
-        <div className="w-screen min-h-[60px] bg-red-500 flex items-center gap-4 overflow-x-auto lg:justify-between overflow-y-hidden px-2">
+        <div className="w-screen min-h-[60px] bg-red-500 flex items-center gap-4 overflow-x-auto lg:justify-between overflow-y-hidden px-2 relative z-9">
             <ul className="flex flex-col items-center text-center text-xs min-w-[70px]" onClick={() => setshowreeldiv(!showreeldiv)}>
                 <li><FontAwesomeIcon icon={faPlay} className="text-2xl" /></li>
                 <li>Reels</li>
             </ul>
-            <ul className="flex flex-col items-center text-center text-xs min-w-[70px]">
+            <ul className="flex flex-col items-center text-center text-xs min-w-[70px]" onClick={()=>setshowtvdiv(!showtvdiv)}>
                 <li><FontAwesomeIcon icon={faTv} className="text-2xl" /></li>
                 <li>Watch</li>
             </ul>

@@ -7,7 +7,7 @@ function Avatar({ avatarUrl }: AvatarProps) {
     <img
       src={avatarUrl}
       alt="Avatar"
-      className="w-[50px] h-[50px] rounded-full object-cover "
+      className="w-[50px] h-[50px] rounded-full object-cover shrink-0"
     />
   );
 }

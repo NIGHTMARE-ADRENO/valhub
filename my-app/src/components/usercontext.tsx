@@ -11,8 +11,11 @@ type User = {
 type UserContextType = {
   user: User | null; // user info (null means logged out)
   setUser: (user: User | null) => void;
-  showreeldiv:boolean;
-  setshowreeldiv:(showreeldiv:boolean)=>void; // function to update user
+  showreeldiv: boolean;
+  setshowreeldiv: (showreeldiv: boolean) => void;
+  showtvdiv:boolean;
+  setshowtvdiv:(showtvdiv:boolean)=>void;
+   // function to update user
 };
 
 // 3. Create the context with an undefined default
@@ -26,13 +29,16 @@ type UserProviderProps = {
 export const UserProvider = ({ children }: UserProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [showreeldiv, setshowreeldiv] = useState<boolean>(false); // initial user is null (not logged in)
+  const [showtvdiv, setshowtvdiv] = useState<boolean>(false);
 
   return (
     <UserContext.Provider value={{
       user,
       setUser,
       showreeldiv,
-      setshowreeldiv
+      setshowreeldiv,
+      showtvdiv,
+      setshowtvdiv
     }}>
       {children}
     </UserContext.Provider>
